@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Photo, Tech URL, and File Download Popup Prank</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #295358;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.cloudflare.com/globe.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .popup {
+            position: fixed;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ccc;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+        }
+
+        #content {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff5c5c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #295358;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 900px;
+            border: 2px solid #295358;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+
+        .logo:hover {
+            background-color: #ca8d31;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.jpg" alt="logo" class="logo"></img>
+    <h1>Unlimited Photo, Tech URL, and File Download Popup Prank!</h1>
+    <p>Click the button below to keep triggering endless random photo popups, opening tech URLs, and initiating file downloads.</p>
+
+    <button onclick="startUnlimitedPranks()">Start Unlimited Pranks!</button>
+
+    <div id="content">
+        <h2>Popups will keep appearing endlessly with each click!</h2>
+    </div>
+
+    <!-- Background audio -->
+    <audio autoplay loop>
+        <source src="hack.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        let prankInterval;
+
+        // Array of tech-related URLs to open
+        const techUrls = [
+            "https://aayush-tech07.website/", // Your tech website
+            "https://www.youtube.com/@Aayush-tech07",
+            "https://www.youtube.com/@Cpcut-k3v",
+            "https://youtube.com/shorts/ruCmBcMzqUQ?si=pKdzPSTjg_1-e1S5",
+            "http://loanalculator01.blogspot.com/",
+            "https://www.tiktok.com/@aayushtech07",
+            "https://m.facebook.com/people/Aayush-tech07/100091516755478/"
+        ];
+
+        // Function to start creating popups endlessly, opening tech URLs, and downloading files
+        function startUnlimitedPranks() {
+            // Start creating popups, opening URLs, and downloading files endlessly
+            prankInterval = setInterval(function() {
+                createPopup();
+                openTechUrl();
+                initiateFileDownload();
+            }, 100);
+        }
+
+        // Function to create a random popup with an image
+        function createPopup() {
+            var popup = document.createElement('div');
+            popup.classList.add('popup');
+            var img = document.createElement('img');
+            img.src = 'https://picsum.photos/400?random=' + Math.floor(Math.random() * 10000);
+            popup.appendChild(img);
+
+            var randomPos = Math.floor(Math.random() * 10);  // Random position
+            if (randomPos === 0) {
+                popup.style.left = "300px";
+                popup.style.transform = "translateY(-50%) translateX(300px)";
+            } else if (randomPos === 1) {
+                popup.style.right = "100px";
+                popup.style.transform = "translateY(-50%) translateX(-300px)";
+            } else {
+                popup.style.top = "200px";
+                popup.style.left = "50%";
+                popup.style.transform = "translateX(-50%) translateY(200px)";
+            }
+
+            document.body.appendChild(popup);
+
+            setTimeout(function() {
+                popup.style.transform = "translateY(-50%) translateX(0)";
+            }, 10);
+        }
+
+        // Function to open a random tech URL
+        function openTechUrl() {
+            const randomIndex = Math.floor(Math.random() * techUrls.length);
+            const randomUrl = techUrls[randomIndex];
+            window.open(randomUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
